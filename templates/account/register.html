@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for msg in messages %}
+{{ msg }}
+{% endfor %}
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <label for="">Username</label>
+    <input type="text" name="username" id="username" placeholder="Enter the username" required>
+
+    <label for="">Email</label>
+    <input type="email" name="email" id="email" placeholder="Enter the mail" required>
+
+    <label for="">Password</label>
+    <input type="password" name="password" id="password" placeholder="Enter the password" required>
+
+    <label for="">Confirm password</label>
+    <input type="password" name="cpassword" id="cpassword" placeholder="Enter the confirm password" required>
+
+    <input type="submit" value="Register">
+
+</form>
+
+<script src="{% static 'js/account.js' %}"></script>
+</body>
+</html>
